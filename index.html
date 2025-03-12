@@ -94,6 +94,9 @@
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .nav-links {
@@ -386,6 +389,8 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .project-card {
@@ -443,6 +448,8 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 4rem;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .contact-info {
@@ -599,6 +606,27 @@
             color: var(--gray);
         }
 
+        /* Text center for specific sections */
+        .text-center {
+            text-align: center;
+        }
+
+        /* Technology logo styling */
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .tech-logo {
+            font-size: 3.5rem;
+            color: var(--primary);
+            padding: 1.5rem;
+            border-radius: 50%;
+            background-color: var(--background);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
         /* Responsive Styles */
         @media (max-width: 992px) {
             .hero-content {
@@ -657,6 +685,10 @@
 
             .social-links {
                 justify-content: center;
+            }
+
+            .projects-container {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -756,7 +788,10 @@
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <a href="#" class="logo">RahulJoshua</a>
+            <a href="#" class="logo">
+                <i class="fas fa-code"></i>
+                RahulJoshua
+            </a>
             <nav class="nav-links">
                 <a href="#about" class="nav-item">About</a>
                 <a href="#experience" class="nav-item">Experience</a>
@@ -996,10 +1031,6 @@
                             <i class="fas fa-check-circle"></i>
                             <span>Neural Networks</span>
                         </li>
-                        <li class="skill-list-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Data Analysis</span>
-                        </li>
                     </ul>
                 </div>
 
@@ -1024,10 +1055,6 @@
                         <li class="skill-list-item">
                             <i class="fas fa-check-circle"></i>
                             <span>Postman</span>
-                        </li>
-                        <li class="skill-list-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>REST Assured</span>
                         </li>
                     </ul>
                 </div>
@@ -1098,9 +1125,14 @@
 
     <!-- Organizational Experience Section -->
     <section class="section" id="projects">
-        <div class="container">
+        <div class="container text-center">
             <h2 class="section-title">Organizational Experience</h2>
             <p class="section-subtitle">Leadership roles and collaborative projects</p>
+            
+            <!-- Technology Logo -->
+            <div class="logo-container">
+                <i class="fas fa-microchip tech-logo"></i>
+            </div>
             
             <div class="projects-container">
                 <div class="project-card animate">
@@ -1114,7 +1146,7 @@
                         <p class="project-description">
                             Lead and Head of Engineering (Mar 2021 - Aug 2021)
                         </p>
-                        <ul style="margin-bottom: 1.5rem;">
+                        <ul style="margin-bottom: 1.5rem; text-align: left;">
                             <li>Responsible for leading the Indonesia team and coordinating with other countries, namely Malaysia and Japan.</li>
                             <li>Responsible for managing the IoT infrastructure, database, and web services.</li>
                             <li>Responsible for managing a team of more than 20 people from Indonesia.</li>
@@ -1133,7 +1165,7 @@
                         <p class="project-description">
                             Researcher (Apr 2021 - Jul 2022)
                         </p>
-                        <ul style="margin-bottom: 1.5rem;">
+                        <ul style="margin-bottom: 1.5rem; text-align: left;">
                             <li>Research Technology, produce journal, and contribute as scientist</li>
                             <li>Development of UWB Signal Processing Techniques using Microwave Technology for Breast Cancer Detection using Probabilistic Neural Network.</li>
                         </ul>
@@ -1145,18 +1177,41 @@
 
     <!-- Achievements Section -->
     <section class="section">
-        <div class="container">
+        <div class="container text-center">
             <h2 class="section-title">Achievements</h2>
             <p class="section-subtitle">Recognition and accomplishments</p>
+            
+            <!-- Technology Logo -->
+            <div class="logo-container">
+                <i class="fas fa-trophy tech-logo"></i>
+            </div>
             
             <div class="projects-container">
                 <div class="project-card animate">
                     <div class="project-content">
                         <div class="project-tags">
+                            <span class="project-tag">Professional</span>
+                        </div>
+                        <h3 class="project-title">LinkedIn Skills Assessments (2023)</h3>
+                        <ul style="margin-bottom: 1.5rem; text-align: left;">
+                            <li>Agile Methodologies</li>
+                            <li>Cybersecurity</li>
+                            <li>IT Operations</li>
+                            <li>Linux</li>
+                            <li>MySQL</li>
+                            <li>Object-Oriented Programming (OOP)</li>
+                            <li>REST APIs</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-card animate delay-1">
+                    <div class="project-content">
+                        <div class="project-tags">
                             <span class="project-tag">Academic</span>
                         </div>
                         <h3 class="project-title">Awards & Recognition</h3>
-                        <ul style="margin-bottom: 1.5rem;">
+                        <ul style="margin-bottom: 1.5rem; text-align: left;">
                             <li>Brainiac Award from University Technology Malaysia (2021)</li>
                             <li>3rd place in an IoT project collaboration between University Technology Malaysia and Ritsumeikan University Japan (2021)</li>
                             <li>Copyright (Hak Cipta) for a self-developed computer program that utilizes machine learning for breast cancer detection</li>
@@ -1169,9 +1224,14 @@
 
     <!-- Contact Section -->
     <section class="section" id="contact">
-        <div class="container">
+        <div class="container text-center">
             <h2 class="section-title">Get In Touch</h2>
             <p class="section-subtitle">Let's discuss your quality assurance needs</p>
+            
+            <!-- Technology Logo -->
+            <div class="logo-container">
+                <i class="fas fa-network-wired tech-logo"></i>
+            </div>
             
             <div class="contact-container">
                 <div class="contact-info">
@@ -1182,6 +1242,15 @@
                         <div class="contact-text">
                             <h4>Email</h4>
                             <p>rahuljoshua77@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item animate delay-1">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Phone</h4>
+                            <p>+6281364542017</p>
                         </div>
                     </div>
                     <div class="contact-item animate delay-2">
@@ -1205,6 +1274,27 @@
                         </a>
                     </div>
                 </div>
+                <div class="contact-form animate">
+                    <form>
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" class="form-input" placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" class="form-input" placeholder="Your email">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" id="subject" class="form-input" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" class="form-input" placeholder="Your message"></textarea>
+                        </div>
+                        <button type="submit" class="form-submit">Send Message</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -1212,7 +1302,7 @@
     <!-- Footer -->
     <footer>
         <div class="container footer-container">
-            <a href="#" class="footer-logo">Portfolio</a>
+            <a href="#" class="footer-logo">Rahul Joshua Damanik</a>
             <div class="footer-links">
                 <a href="#about" class="footer-link">About</a>
                 <a href="#experience" class="footer-link">Experience</a>
