@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rahul Joshua Damanik | Test Engineer Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #3b82f6;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --success: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --text-dark: #0f172a;
+            --text-light: #f1f5f9;
+            --border: #e2e8f0;
+            --card: #ffffff;
+            --card-dark: #334155;
+            --background: #f1f5f9;
+            --background-dark: #0f172a;
+        }
+
+        .dark-mode {
+            --primary: #3b82f6;
+            --primary-dark: #2563eb;
+            --secondary: #60a5fa;
+            --dark: #f8fafc;
+            --light: #1e293b;
+            --gray: #94a3b8;
+            --text-dark: #f1f5f9;
+            --text-light: #0f172a;
+            --border: #334155;
+            --card: #1e293b;
+            --card-dark: #f1f5f9;
+            --background: #0f172a;
+            --background-dark: #f1f5f9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--primary-dark);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            padding: 1.5rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            background-color: var(--background);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-item {
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+        }
+
+        .nav-item:hover {
+            color: var(--primary);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+        }
+
+        .hero {
+            padding: 10rem 0 6rem;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4rem;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 1rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .greeting {
+            color: var(--primary);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .highlight {
+            color: var(--primary);
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            margin-left: 1rem;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .section {
+            padding: 6rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray);
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .experience-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .experience-card {
+            background-color: var(--card);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .experience-company {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .experience-duration {
+            font-size: 1rem;
+            color: var(--gray);
+        }
+
+        .experience-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .experience-description {
+            margin-bottom: 1.5rem;
+        }
+
+        .skills-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-item {
+            background-color: var(--background);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background-color: var(--card);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .skill-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list-item {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-list-item i {
+            color: var(--success);
+        }
+
+        .education-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .education-card {
+            background-color: var(--card);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .education-school {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .education-duration {
+            font-size: 1rem;
+            color: var(--gray);
+        }
+
+        .education-degree {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .education-description {
+            margin-bottom: 1.5rem;
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--card);
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-tag {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 0.5rem;
+            font-size: 1.25rem;
+        }
+
+        .contact-text h4 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-text p {
+            color: var(--gray);
+        }
+
+        .contact-form {
+            background-color: var(--card);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            background-color: var(--background);
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+        }
+
+        textarea.form-input {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .form-submit:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        footer {
+            background-color: var(--card);
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--background);
+            color: var(--text-dark);
+            border-radius: 9999px;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            color: var(--gray);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column-reverse;
+                gap: 2rem;
+            }
+
+            .hero-text, .hero-image {
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .btn-outline {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+
+            .hero-buttons {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                justify-content: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--background);
+            z-index: 200;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            transform: translateX(-100%);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+
+        .mobile-menu-link {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-link:hover {
+            color: var(--primary);
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        .delay-1 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.3s;
+        }
+
+        .delay-4 {
+            animation-delay: 0.4s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">RahulJoshua</a>
+            <nav class="nav-links">
+                <a href="#about" class="nav-item">About</a>
+                <a href="#experience" class="nav-item">Experience</a>
+                <a href="#skills" class="nav-item">Skills</a>
+                <a href="#education" class="nav-item">Education</a>
+                <a href="#projects" class="nav-item">Projects</a>
+                <a href="#contact" class="nav-item">Contact</a>
+            </nav>
+            <button class="theme-toggle" id="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="mobile-menu-close" id="mobile-menu-close">
+            <i class="fas fa-times"></i>
+        </button>
+        <a href="#about" class="mobile-menu-link">About</a>
+        <a href="#experience" class="mobile-menu-link">Experience</a>
+        <a href="#skills" class="mobile-menu-link">Skills</a>
+        <a href="#education" class="mobile-menu-link">Education</a>
+        <a href="#projects" class="mobile-menu-link">Projects</a>
+        <a href="#contact" class="mobile-menu-link">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <p class="greeting animate">Hello, I'm</p>
+                    <h1 class="animate delay-1">Rahul Joshua Damanik</h1>
+                    <h1 class="animate delay-2">Software <span class="highlight">Test Engineer</span></h1>
+                    <p class="hero-description animate delay-3">
+                        I am a Software Engineer specializing in testing, with a strong emphasis on leveraging data to drive high-quality outcomes. My ability to break down complex systems and implement data-driven testing strategies ensures software meets the highest standards of performance and reliability. With expertise in automated testing, CI/CD pipelines, and in-depth data analysis, I'm committed to using data to optimize testing processes and deliver robust software solutions.
+                    </p>
+                    <div class="hero-buttons animate delay-4">
+                        <a href="#contact" class="btn btn-primary">Contact Me</a>
+                        <a href="#experience" class="btn btn-outline">View Experience</a>
+                    </div>
+                </div>
+                <div class="hero-image animate delay-2">
+                    <img src="https://images.unsplash.com/photo-1596003906949-67221c37965c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Rahul Joshua Damanik">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section" id="experience">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            <p class="section-subtitle">My professional journey in software testing and engineering</p>
+            
+            <div class="experience-container">
+                <div class="experience-card animate">
+                    <div class="experience-header">
+                        <h3 class="experience-company">PT Kitabisa.com</h3>
+                        <p class="experience-duration">Sep 2022 - Present</p>
+                    </div>
+                    <h4 class="experience-title">Software Test Engineer Automation</h4>
+                    <ul class="experience-description">
+                        <li>Test Automation: Expertise in WebdriverIO, Selenium, Puppeteer, Playwright, Nightwatch, and other tools, with strong proficiency in JavaScript and Python.</li>
+                        <li>Load Testing: Skilled in k6 Load Testing to ensure software stability under heavy traffic.</li>
+                        <li>API & Manual Testing: Proficient in thorough API and manual testing to meet all software requirements.</li>
+                        <li>Software Deployment: Experienced in planning and executing reliable software updates.</li>
+                        <li>Research & Innovation: Continuously integrating new technologies to enhance testing practices.</li>
+                        <li>AI, LLM & ML Skills: Proficient in LLM fine-tuning, various ML algorithms (clustering, regression, ensemble methods), exploratory data analysis, and end-to-end pipeline deployment.</li>
+                        <li>Database Management: Competent in PostgreSQL for Patching data on Production.</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-card animate delay-1">
+                    <div class="experience-header">
+                        <h3 class="experience-company">PT Vidio.com</h3>
+                        <p class="experience-duration">Feb 2022 - Jul 2022</p>
+                    </div>
+                    <h4 class="experience-title">Software Engineer in Test</h4>
+                    <ul class="experience-description">
+                        <li>Setting example for AAA (Arrange, Action, Assert) principles in automation testing with Selenium webdriver using Robotframework and Python</li>
+                        <li>Entrusted in managing CI/CD automation Jenkins pipeline for robotframework and TV device testing, create Bash and Groovy scripts for configuration</li>
+                        <li>Implement Robotframework tests, Android Emulator and real devices (TV and workstation), also Containers in the pipeline</li>
+                        <li>Build automated testing systems for regular checks</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-card animate delay-2">
+                    <div class="experience-header">
+                        <h3 class="experience-company">Universitas Riau</h3>
+                        <p class="experience-duration">Apr 2021 - Oct 2022</p>
+                    </div>
+                    <h4 class="experience-title">Software Engineer - Machine Learning</h4>
+                    <ul class="experience-description">
+                        <li>Successfully obtained copyright (Hak Cipta) for a self-developed computer program that utilizes machine learning for breast cancer detection.</li>
+                        <li>Successfully developed UWB Signal Processing techniques using Microwave Technology for Breast Cancer Detection using Probabilistic Neural Network (Machine Learning).</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-card animate delay-3">
+                    <div class="experience-header">
+                        <h3 class="experience-company">Data Analyst Freelance</h3>
+                        <p class="experience-duration">Aug 2019 - Present</p>
+                    </div>
+                    <h4 class="experience-title">Software Engineer</h4>
+                    <ul class="experience-description">
+                        <li>Conducted research and analysis of various industries and markets to inform web content strategy and business decision-making.</li>
+                        <li>Developed and implemented a process for sending product data from an e-commerce site to another online vendor (e.g. Google Shopping)</li>
+                        <li>Created a Robot Automation Process to automate repetitive tasks, increasing efficiency and productivity.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <p class="section-subtitle">My expertise in testing and technology</p>
+            
+            <div class="skills-container">
+                <div class="skill-card animate">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="skill-title">Programming Languages</h3>
+                    <ul class="skill-list">
+                        <li class="skill-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>JavaScript</span>
+                        </li>
+                        <li class="skill-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Python</span>
+                        </li>
+                        <li class="skill-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>SQL</span>
+                        </li>
+                        <li class="skill-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>NodeJS</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="skill-card animate delay-1">
+                    <div class="skill-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="skill-title">Test Automation</h3>
+                    <ul class="skill-list">
+                        <li class="skill-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>WebdriverIO</span>
+                        </li>
+                        <li class="skill-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Selenium WebDriver</span>
+                        </li>
+                        <li class="skill-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Puppeteer</span>
+                        </li>
+                        <li class="skill-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Playwright</span>
+                        </li>
+                        <li class="skill-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Nightwatch</span>
+                        </li>
+                        <li class="skill-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Robot Framework</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="skill-card animate delay-2">
+                    <div class="skill-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="skill-title">DevOps & Tools</h3>
+                    <ul class="skill-list">
+                        <li class="skill-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Jenkins</span>
+                        </li>
+                        <li class="skill-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>CI/CD Pipelines</span>
+                        </li>
+                        <li class="skill-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Git/GitHub</span>
+                        </li>
+                        <li class="skill-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Docker</span>
+                        </li>
+                        <li class="skill-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Bash/Groovy Scripting</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="skill-card animate delay-3">
+                    <div class="skill-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="skill-title">AI & Machine Learning</h3>
+                    <ul class="skill-list">
+                        <li class="skill-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>LLM Fine-tuning</span>
+                        </li>
+                        <li class="skill-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Clustering Algorithms</span>
+                        </li>
+                        <li class="skill-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Regression Analysis</span>
+                        </li>
+                        <li class="skill-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Ensemble Methods</span>
+                        </li>
+                        <li class="skill-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Neural Networks</span>
+                        </li>
+                        <li class="skill-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Data Analysis</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="skill-card animate delay-3">
+                    <div class="skill-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="skill-title">Database & API</h3>
+                    <ul class="skill-list">
+                        <li class="skill-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>PostgreSQL</span>
+                        </li>
+                        <li class="skill-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>MySQL</span>
+                        </li>
+                        <li class="skill-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>RESTful API Testing</span>
+                        </li>
+                        <li class="skill-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Postman</span>
+                        </li>
+                        <li class="skill-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>REST Assured</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="skill-card animate delay-3">
+                    <div class="skill-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="skill-title">Mobile & Performance</h3>
+                    <ul class="skill-list">
+                        <li class="skill-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Appium</span>
+                        </li>
+                        <li class="skill-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Android Emulator</span>
+                        </li>
+                        <li class="skill-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>TV Device Testing</span>
+                        </li>
+                        <li class="skill-list-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>k6 Load Testing</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="section" id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <p class="section-subtitle">My academic background and learning journey</p>
+            
+            <div class="education-container">
+                <div class="education-card animate">
+                    <div class="education-header">
+                        <h3 class="education-school">Politeknik Caltex Riau</h3>
+                        <p class="education-duration">Aug 2024 - Present</p>
+                    </div>
+                    <h4 class="education-degree">Master of Applied Computer Engineering</h4>
+                    <ul class="education-description">
+                        <li>Network Design</li>
+                        <li>Cyber Security</li>
+                        <li>Data Science</li>
+                    </ul>
+                </div>
+                
+                <div class="education-card animate delay-1">
+                    <div class="education-header">
+                        <h3 class="education-school">Universitas Riau</h3>
+                        <p class="education-duration">Completed</p>
+                    </div>
+                    <h4 class="education-degree">Research & Development</h4>
+                    <ul class="education-description">
+                        <li>Member of Insentif Riset Sistem Inovasi Nasional (INSINAS) team</li>
+                        <li>Successfully obtained copyright (Hak Cipta) for a self-developed computer program that utilizes machine learning for breast cancer detection</li>
+                        <li>Successfully developing of UWB Signal Processing Techniques using Microwave Technology for Breast Cancer Detection using Probabilistic Neural Network</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Organizational Experience Section -->
+    <section class="section" id="projects">
+        <div class="container">
+            <h2 class="section-title">Organizational Experience</h2>
+            <p class="section-subtitle">Leadership roles and collaborative projects</p>
+            
+            <div class="projects-container">
+                <div class="project-card animate">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Capstone Project" class="project-image">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Leadership</span>
+                            <span class="project-tag">International</span>
+                        </div>
+                        <h3 class="project-title">Capstone Experience 3.0 Indonesia, Malaysia & Japan</h3>
+                        <p class="project-description">
+                            Lead and Head of Engineering (Mar 2021 - Aug 2021)
+                        </p>
+                        <ul style="margin-bottom: 1.5rem;">
+                            <li>Responsible for leading the Indonesia team and coordinating with other countries, namely Malaysia and Japan.</li>
+                            <li>Responsible for managing the IoT infrastructure, database, and web services.</li>
+                            <li>Responsible for managing a team of more than 20 people from Indonesia.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-card animate delay-1">
+                    <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Research Project" class="project-image">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Research</span>
+                            <span class="project-tag">Medical Tech</span>
+                        </div>
+                        <h3 class="project-title">Research INSINAS</h3>
+                        <p class="project-description">
+                            Researcher (Apr 2021 - Jul 2022)
+                        </p>
+                        <ul style="margin-bottom: 1.5rem;">
+                            <li>Research Technology, produce journal, and contribute as scientist</li>
+                            <li>Development of UWB Signal Processing Techniques using Microwave Technology for Breast Cancer Detection using Probabilistic Neural Network.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Achievements</h2>
+            <p class="section-subtitle">Recognition and accomplishments</p>
+            
+            <div class="projects-container">
+                <div class="project-card animate">
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Academic</span>
+                        </div>
+                        <h3 class="project-title">Awards & Recognition</h3>
+                        <ul style="margin-bottom: 1.5rem;">
+                            <li>Brainiac Award from University Technology Malaysia (2021)</li>
+                            <li>3rd place in an IoT project collaboration between University Technology Malaysia and Ritsumeikan University Japan (2021)</li>
+                            <li>Copyright (Hak Cipta) for a self-developed computer program that utilizes machine learning for breast cancer detection</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Let's discuss your quality assurance needs</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item animate">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <p>rahuljoshua77@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item animate delay-2">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Location</h4>
+                            <p>Jakarta, Indonesia</p>
+                        </div>
+                    </div>
+                    <div class="social-links animate delay-3">
+                        <a href="https://linkedin.com/in/rahuljoshua" class="social-link" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <a href="#" class="footer-logo">Portfolio</a>
+            <div class="footer-links">
+                <a href="#about" class="footer-link">About</a>
+                <a href="#experience" class="footer-link">Experience</a>
+                <a href="#skills" class="footer-link">Skills</a>
+                <a href="#education" class="footer-link">Education</a>
+                <a href="#projects" class="footer-link">Projects</a>
+                <a href="#contact" class="footer-link">Contact</a>
+            </div>
+        </div>
+        <p class="copyright">© 2025 Rahul Joshua Damanik - Test Engineer. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        });
+
+        // Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+        
+        mobileMenuClose.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+        
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animation on scroll
+        const animatedElements = document.querySelectorAll('.animate');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        animatedElements.forEach(element => {
+            element.style.opacity = 0;
+            element.style.transform = 'translateY(20px)';
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
