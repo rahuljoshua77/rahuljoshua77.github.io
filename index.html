@@ -444,10 +444,12 @@
             line-height: 1.6;
         }
 
+        /* Centered Contact Section */
         .contact-container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 4rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             max-width: 1000px;
             margin: 0 auto;
         }
@@ -455,7 +457,9 @@
         .contact-info {
             display: flex;
             flex-direction: column;
+            align-items: center;
             gap: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .contact-item {
@@ -486,60 +490,29 @@
             color: var(--gray);
         }
 
-        .contact-form {
-            background-color: var(--card);
-            border-radius: 1rem;
-            padding: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
         }
 
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-
-        .form-input {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid var(--border);
-            border-radius: 0.5rem;
+        .social-link {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             background-color: var(--background);
             color: var(--text-dark);
+            border-radius: 9999px;
             transition: all 0.3s ease;
         }
 
-        .form-input:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
-        }
-
-        textarea.form-input {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .form-submit {
-            width: 100%;
-            padding: 0.75rem;
+        .social-link:hover {
             background-color: var(--primary);
             color: white;
-            border: none;
-            border-radius: 0.5rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .form-submit:hover {
-            background-color: var(--primary-dark);
             transform: translateY(-3px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
 
         footer {
@@ -575,29 +548,6 @@
 
         .footer-link:hover {
             color: var(--primary);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .social-link {
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--background);
-            color: var(--text-dark);
-            border-radius: 9999px;
-            transition: all 0.3s ease;
-        }
-
-        .social-link:hover {
-            background-color: var(--primary);
-            color: white;
-            transform: translateY(-3px);
         }
 
         .copyright {
@@ -640,11 +590,6 @@
 
             h1 {
                 font-size: 2.5rem;
-            }
-
-            .contact-container {
-                grid-template-columns: 1fr;
-                gap: 3rem;
             }
         }
 
@@ -784,7 +729,7 @@
         }
     </style>
 </head>
-<body>
+<body class="dark-mode">
     <!-- Header -->
     <header>
         <div class="container header-container">
@@ -801,7 +746,7 @@
                 <a href="#contact" class="nav-item">Contact</a>
             </nav>
             <button class="theme-toggle" id="theme-toggle">
-                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
             </button>
             <button class="mobile-menu-btn" id="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
@@ -1253,7 +1198,7 @@
                             <p>Jakarta, Indonesia</p>
                         </div>
                     </div>
-                    <div class="social-links animate delay-3">
+                    <div class="social-links animate delay-2">
                         <a href="https://linkedin.com/in/rahuljoshua" class="social-link" target="_blank">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
